@@ -14,7 +14,7 @@ class Nav extends React.Component {
         this.onsubmit = this.onsubmit.bind(this);
     }
 
-    onsubmit() {
+    async onsubmit() {
         if (this.text.value.trim().length === 0) {
             alert('Must write some text on input field');
         } else {
@@ -23,7 +23,10 @@ class Nav extends React.Component {
             console.log(this.state.id);
             store.dispatch(appendList([this.state.id, date, this.text.value, this.state.completed]))
             this.text.value = '';
-            this.setState(prev => ({ id: prev.id++ }));
+            await this.setState(prev => {
+                console.log(prev.id);
+                return { id: prev.id++ }
+            });
             console.log(this.state.id);
         }
     }

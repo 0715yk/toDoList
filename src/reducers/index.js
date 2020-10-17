@@ -13,7 +13,6 @@ const appendList = (state = initialState, action) => {
             arr = arr.filter(el => {
                 return el[0] !== parseInt(action.id);
             })
-            console.log(arr);
             return Object.assign({}, state, { list: arr });
         case "COMPLETE_TODO_LIST":
             let array = state.list;

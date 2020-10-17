@@ -14,6 +14,7 @@ class ToDoList extends React.Component {
         this.buttonMouseOver = this.buttonMouseOver.bind(this);
         this.buttonMouseOut = this.buttonMouseOut.bind(this);
     }
+
     checkComplete() {
         store.dispatch(completedList(this.idValue.value));
     }

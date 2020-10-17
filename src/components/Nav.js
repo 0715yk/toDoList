@@ -13,6 +13,7 @@ class Nav extends React.Component {
         }
         this.onsubmit = this.onsubmit.bind(this);
     }
+
     onsubmit() {
         if (this.text.value.trim().length === 0) {
             alert('Must write some text on input field');
@@ -23,8 +24,8 @@ class Nav extends React.Component {
             this.text.value = '';
             this.setState(prev => ({ id: prev.id++ }));
         }
-
     }
+
     componentDidMount() {
         setInterval(() => {
             let date = new Date().toLocaleDateString();

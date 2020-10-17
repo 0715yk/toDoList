@@ -7,10 +7,6 @@ class App extends React.Component {
   // eslint-disable-next-line
   constructor(props) {
     super(props);
-    this.state = {
-      id: 0,
-      completed: false,
-    }
   }
 
   render() {

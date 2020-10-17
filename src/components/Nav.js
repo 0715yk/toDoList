@@ -23,8 +23,8 @@ class Nav extends React.Component {
             console.log(this.state.id);
             store.dispatch(appendList([this.state.id, date, this.text.value, this.state.completed]))
             this.text.value = '';
+            console.log('hi');
             await this.setState(prev => {
-                console.log(prev.id);
                 return { id: prev.id++ }
             });
             console.log(this.state.id);

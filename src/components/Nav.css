@@ -43,7 +43,6 @@
     #inputArea input {
         font-size: 1.0em;
         width: 20%;
-        height: 10%;
     }
 
     #inputArea button {
@@ -52,6 +51,6 @@
     }
 
     #clockPart {
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
 }

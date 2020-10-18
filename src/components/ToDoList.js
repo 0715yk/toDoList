@@ -11,8 +11,8 @@ class ToDoList extends React.Component {
         this.state = {
             button: '포기'
         }
-        this.buttonMouseOver = this.buttonMouseOver.bind(this);
-        this.buttonMouseOut = this.buttonMouseOut.bind(this);
+        this.onMouseOver = this.onMouseOver.bind(this);
+        this.onMouseOut = this.onMouseOut.bind(this);
     }
 
     checkComplete() {
@@ -23,26 +23,25 @@ class ToDoList extends React.Component {
         store.dispatch(deleteList(this.idValue.value));
     }
 
-    buttonMouseOver() {
-        this.setState({ button: '포기하지 말자!' });
+    onMouseOver() {
+        this.setState({ button: '안돼!' })
     }
 
-    buttonMouseOut() {
-        this.setState({ button: '포기' });
+    onMouseOut() {
+        this.setState({ button: '포기' })
     }
 
     render() {
         const { id, date, text, completed } = this.props;
         return (
-            <>
-                <div className="list">
-                    <div id="date">{date}</div>
-                    <div id="text" style={completed ? { textDecorationLine: 'line-through' } : {}}>{text.length <= 15 ? text : `${text.substring(0, 16)}...`}</div>
-                    <input id="checkbox" type="checkbox" onChange={this.checkComplete}></input>
-                    <input type="hidden" value={id} ref={(input) => { this.idValue = input }} />
-                    <button onMouseOver={this.buttonMouseOver} onMouseOut={this.buttonMouseOut} onClick={this.deleteList}>{this.state.button}</button>
-                </div>
-            </>
+            <tr style={completed ? { backgroundColor: '#87CEEB' } : {}}>
+                <td id="date">{date}</td>
+                <td id="text">{text.length <= 15 ? text : `${text.substring(0, 16)}...`}</td>
+                <td><input id="checkbox" type="checkbox" onChange={this.checkComplete}></input>
+                    <input type="hidden" value={id} ref={(input) => { this.idValue = input }} /></td>
+
+                <td><button onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} onClick={this.deleteList}>{this.state.button}</button></td>
+            </tr>
         );
     }
 

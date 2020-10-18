@@ -7,14 +7,14 @@
 }
 
 #date {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #text {
     width: 40%;
     text-align: center;
     flex-grow: 0.5;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #checkbox {
@@ -24,7 +24,7 @@
 }
 
 button {
-    font-size: 25px;
+    font-size: 20px;
     background-color: #6495ED;
     font-weight: bold;
     box-sizing: border-box;
@@ -36,8 +36,12 @@ button:hover {
     cursor: pointer;
 }
 
+td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
 @media screen and (max-width: 1090px) {
-    .list {}
 
     #text {
         font-size: 0.9em;
@@ -48,7 +52,10 @@ button:hover {
 
     }
 
-    #checkbox {}
+    #checkbox {
+        width: 15px;
+        height: 15px;
+    }
 
     button {
         font-size: 0.9em;

@@ -14,20 +14,17 @@ class Nav extends React.Component {
         this.onsubmit = this.onsubmit.bind(this);
     }
 
-    async onsubmit() {
+    onsubmit() {
         if (this.text.value.trim().length === 0) {
-            alert('Must write some text on input field');
+            alert('할일을 적어주세요!');
         } else {
             let date = new Date().toLocaleDateString();
             date = date.substring(0, date.length - 1);
-            console.log(this.state.id);
             store.dispatch(appendList([this.state.id, date, this.text.value, this.state.completed]))
             this.text.value = '';
-            console.log('hi');
-            await this.setState(prev => {
+            this.setState(prev => {
                 return { id: prev.id++ }
             });
-            console.log(this.state.id);
         }
     }
 
@@ -36,7 +33,7 @@ class Nav extends React.Component {
             let date = new Date().toLocaleDateString();
             date = date.substring(0, date.length - 1);
             let time = new Date().toLocaleTimeString();
-            let weeklist = [null, '월', '화', '수', '목', '금', '토', '일'];
+            let weeklist = ['일', '월', '화', '수', '목', '금', '토'];
             let weekday = new Date().getDay();
             this.setState({ date: `${date} / ${time} (${weeklist[weekday]})` })
         }, 10);
@@ -49,7 +46,7 @@ class Nav extends React.Component {
                     :
                     (<div id="clockPart">Loading...</div>)}
                 <div id="inputArea">
-                    <input ref={(input) => { this.text = input }} placeholder="write your ToDoList" type="text"></input>
+                    <input ref={(input) => { this.text = input }} placeholder="오늘도 파이팅!" type="text"></input>
                     <button onClick={this.onsubmit}>등록</button>
                 </div>
             </>

@@ -8,8 +8,63 @@
     align-items: center;
 }
 
+table,
+th {
+    margin-top: 15px;
+    table-layout: auto;
+    border: 1px solid black;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    background-color: #6495ED;
+}
+
+#dateTh {
+    width: 15%;
+    font-size: 25px;
+}
+
+#todo {
+    width: 70%;
+    font-size: 25px;
+}
+
+#completed {
+    width: 5%;
+    font-size: 25px;
+}
+
+#giveup {
+    width: 10%;
+    font-size: 25px;
+}
+
 @media screen and (max-width: 1090px) {
     .lists {
         overflow: scroll;
+    }
+
+    #dateTh {
+        width: 25%;
+        font-size: 19px;
+    }
+
+    #todo {
+        width: 50%;
+        font-size: 19px;
+    }
+
+    #completed {
+        width: 5%;
+        font-size: 19px;
+    }
+
+    #giveup {
+        width: 20%;
+        font-size: 19px;
     }
 }

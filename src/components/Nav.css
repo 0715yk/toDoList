@@ -43,6 +43,7 @@
     #inputArea input {
         font-size: 1.0em;
         width: 20%;
+        height: 10%;
     }
 
     #inputArea button {

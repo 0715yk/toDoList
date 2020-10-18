@@ -20,11 +20,11 @@ class Nav extends React.Component {
         } else {
             let date = new Date().toLocaleDateString();
             date = date.substring(0, date.length - 1);
-            store.dispatch(appendList([this.state.id, date, this.text.value, this.state.completed]))
-            this.text.value = '';
             this.setState(prev => {
                 return { id: prev.id++ }
             });
+            store.dispatch(appendList([this.state.id, date, this.text.value, this.state.completed]))
+            this.text.value = '';
         }
     }
 
